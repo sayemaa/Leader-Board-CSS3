@@ -5,15 +5,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 /* -------------------- 
-     Common styles
-          or
        Utilites
 ----------------------- */
 
 body{
     font-family: 'Poppins', sans-serif;
     background-color:#F3F1FF;
+    margin: 0px;
 }
+
+/*---------------------- 
+     Navbar style 
+------------------------*/
+
+header {
+    background: #562EFF;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar{
+    display: flex;
+    width: 900px;
+    justify-content: space-between;
+}
+
+.left-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon img{
+    width: 40.42px;
+}
+
+.icon-name {
+    font-size: 24px;
+    color: white;
+    margin-left: 10px;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.right-nav ul{
+    display: flex;
+}
+
+.right-nav ul li{
+    font-size: 16px;
+    font-weight: 400px;
+    list-style: none;
+    color: white;
+    margin-right: 36px;
+}
+
+.right-nav ul li:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.nav-profile{
+    width: 51px;
+    height: 51px;
+}
+
+
+
+/*----------------------
+          Main 
+------------------------ */
 
 main{
     display: flex;
@@ -172,13 +235,37 @@ hr{
 /* Mobile Devices */
 
 @media only screen and (max-width: 688px) {
-    .container{
+
+    .container, .navbar{
         width: 100%;
     }
-    .players, .blogs, .courses{
-        grid-template-columns: repeat(1, 1fr);
+
+    .left-nav{
+        margin-left: 10px;
     }
-    .player, .blogs{
+
+    .right-nav{
+        background-color: #562EFF;
+    }
+    
+    .right-nav ul li{
+        margin-right: 10px;
+    }
+
+    .players{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blogs, .courses {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+
+    .player, .blog{
         flex-direction: column;
         align-items: center;
     }
@@ -187,16 +274,31 @@ hr{
 /* Tablet Devices */
 
 @media only screen and (min-width: 688px) and (max-width: 768px) {
-    .container{
+    .container, .navbar{
         width: 100%;
     }
+
+    .left-nav{
+        margin-left: 10px;
+    }
+
+    .right-nav ul li{
+        margin-right: 10px;
+    }
+
+    .nav-profile img {
+        margin-right: 45px;
+    }
+
     .players, .courses{
         grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        grid-row-gap: 15px;
     }
     .blogs{
         grid-template-columns: repeat(1, 1fr);
     }
-    .player, .blogs{
+    .player, .blog{
         align-items: center;
     }
 }
